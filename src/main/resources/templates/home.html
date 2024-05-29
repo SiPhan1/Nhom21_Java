@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh Sách Khoá Học</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #00FF00;
+        }
+
+        .course-form {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .course-info {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Danh Sách Khoá Học</h2>
+    <ul>
+        <li th:each="course : ${listcourse}">
+            <form class="course-form">
+                <span class="course-info">Start Date: <span th:text="${course.startDate}"></span></span>
+                <span class="course-info">Lecture Name: <span th:text="${course.lectureName}"></span></span>
+                <span class="course-info">Place: <span th:text="${course.place}"></span></span>
+            </form>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
